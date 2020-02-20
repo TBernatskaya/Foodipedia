@@ -36,6 +36,37 @@ class ProductViewModelTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1)
     }
+
+    func testNutrientInfo_isCorrect() {
+        let serviceMock = ProductServiceMock(shouldReturnError: false)
+        let viewModel = ProductViewModelImpl(productService: serviceMock)
+        let expectation = XCTestExpectation(description: "Product is fetched")
+
+        viewModel.fetchRandomProduct(completion: { _, _ in
+            let (name, amount) = viewModel.nutrientInfo(by: 0)
+            XCTAssertEqual(name, "Fat")
+            XCTAssertEqual(amount, "15.54")
+            expectation.fulfill()
+        })
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func testNutrientInfo_isEmpty() {
+        let serviceMock = ProductServiceMock(shouldReturnError: false)
+        let viewModel = ProductViewModelImpl(productService: serviceMock)
+        let expectation = XCTestExpectation(description: "Product is fetched")
+        let indexOutOfRange = viewModel.nutrientsCount + 1
+
+        viewModel.fetchRandomProduct(completion: { _, _ in
+            let (name, amount) = viewModel.nutrientInfo(by: indexOutOfRange)
+            XCTAssertEqual(name, "")
+            XCTAssertEqual(amount, "")
+            expectation.fulfill()
+        })
+
+        wait(for: [expectation], timeout: 1)
+    }
 }
 
 private struct ProductServiceMock: ProductService {

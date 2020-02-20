@@ -81,7 +81,7 @@ class ProductViewController: UIViewController {
 
 extension ProductViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NutrientName.allCases.count
+        return viewModel.nutrientsCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

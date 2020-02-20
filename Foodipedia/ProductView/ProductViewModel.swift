@@ -1,6 +1,7 @@
 import Foundation
 
 protocol ProductViewModel {
+    var nutrientsCount: Int { get }
     func fetchRandomProduct(completion: @escaping(Product?, String?) -> ())
     func nutrientInfo(by index: Int) -> (String, String)
 }
@@ -10,7 +11,8 @@ class ProductViewModelImpl: ProductViewModel {
     let productService: ProductService
     var product: Product?
 
-    lazy var randomProductID = { Int.random(in: 1...200) }()
+    var nutrientsCount: Int { NutrientName.allCases.count }
+    var randomProductID: Int { Int.random(in: 1...200) }
 
     init(productService: ProductService = ProductServiceImpl()) {
         self.productService = productService
@@ -28,12 +30,14 @@ class ProductViewModelImpl: ProductViewModel {
     }
 
     func nutrientInfo(by index: Int) -> (String, String) {
-        if let product = product {
-            let name = NutrientName.allCases[index]
-            let amount = product.nutrientAmount(for: name)
-            return (name.rawValue, String(amount))
-        }
-        return ("", "")
+        guard
+            let  product = product,
+            index < nutrientsCount
+        else { return ("", "") }
+
+        let name = NutrientName.allCases[index]
+        let amount = product.nutrientAmount(for: name)
+        return (name.rawValue, String(amount))
     }
 }
 
