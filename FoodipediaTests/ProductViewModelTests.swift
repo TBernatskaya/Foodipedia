@@ -55,10 +55,6 @@ private struct ProductServiceMock: ProductService {
     )
 
     func fetchProduct(by productID: Int, completion: @escaping (Result<ProductResponse, Error>) -> ()) {
-        if shouldReturnError {
-            completion(.failure(error))
-        } else {
-            completion(.success(productResponse))
-        }
+        shouldReturnError ? completion(.failure(error)) : completion(.success(productResponse))
     }
 }

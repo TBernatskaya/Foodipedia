@@ -11,8 +11,6 @@ class ProductServiceImpl: ProductService {
         var request = router.fetchProductRequest(with: productID)
         request.addAuthorizationHeader()
 
-        print(request.url?.absoluteString)
-
         fetchAndDecode(request: request, completion: completion)
     }
 
