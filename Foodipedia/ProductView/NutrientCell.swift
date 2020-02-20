@@ -48,7 +48,6 @@ class NutrientCell: UICollectionViewCell {
             nutrientName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             nutrientName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             nutrientAmount.topAnchor.constraint(equalTo: nutrientName.bottomAnchor, constant: 5),
-            nutrientAmount.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             nutrientAmount.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             nutrientAmount.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5)
         ])

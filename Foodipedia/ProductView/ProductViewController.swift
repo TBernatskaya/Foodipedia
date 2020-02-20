@@ -6,6 +6,15 @@ class ProductViewController: UIViewController {
 
     lazy var productHighlights: ProductHighlightsView = { ProductHighlightsView() }()
 
+    lazy var refreshButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemGreen
+        button.setTitle("Refresh", for: .normal)
+        button.addTarget(self, action: #selector(refresh), for: .touchUpInside)
+        return button
+    }()
+
     lazy var productNutrients: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -30,6 +39,7 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
 
+        view.addSubview(refreshButton)
         view.addSubview(productHighlights)
         view.addSubview(productNutrients)
 
@@ -37,9 +47,14 @@ class ProductViewController: UIViewController {
         productNutrients.delegate = self
 
         setupConstraints()
+        refresh()
+    }
+}
 
+private extension ProductViewController {
+
+    @objc func refresh() {
         viewModel.fetchRandomProduct(completion: { product, error in
-
             DispatchQueue.main.async {
                 if let product = product {
                     self.updateViews(with: product)
@@ -51,23 +66,27 @@ class ProductViewController: UIViewController {
         })
     }
 
-    private func updateViews(with product: Product) {
+    func updateViews(with product: Product) {
         productHighlights.productName.text = product.title
         productHighlights.calories.text = String(product.calories)
         productHighlights.caloriesSubtitle.text = "Calories per serving"
         productNutrients.reloadData()
     }
 
-    private func presentAlert(with title: String?) {
+    func presentAlert(with title: String?) {
         let title = title ?? "Unknown error"
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         alert.addAction(.init(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
-    private func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
-            productHighlights.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            refreshButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
+            refreshButton.heightAnchor.constraint(equalToConstant: 32),
+            refreshButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            refreshButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            productHighlights.topAnchor.constraint(equalTo: refreshButton.bottomAnchor, constant: 32),
             productHighlights.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             productHighlights.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             productHighlights.heightAnchor.constraint(equalToConstant: view.frame.height/3),
