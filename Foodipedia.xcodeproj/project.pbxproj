@@ -16,6 +16,7 @@
 		D8E5E71F23FE887C001B31FF /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E71E23FE887C001B31FF /* ProductService.swift */; };
 		D8E5E72123FE8955001B31FF /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E72023FE8955001B31FF /* ProductResponse.swift */; };
 		D8E5E72323FEB09A001B31FF /* ProductHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E72223FEB09A001B31FF /* ProductHighlightsView.swift */; };
+		D8E5E72723FEDBE6001B31FF /* NutrientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E72623FEDBE6001B31FF /* NutrientCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D8E5E71E23FE887C001B31FF /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		D8E5E72023FE8955001B31FF /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		D8E5E72223FEB09A001B31FF /* ProductHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHighlightsView.swift; sourceTree = "<group>"; };
+		D8E5E72623FEDBE6001B31FF /* NutrientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		D8E5E72423FED9B1001B31FF /* ProductView */ = {
 			isa = PBXGroup;
 			children = (
+				D8E5E72623FEDBE6001B31FF /* NutrientCell.swift */,
 				D8E5E72223FEB09A001B31FF /* ProductHighlightsView.swift */,
 				D8E5E6FE23FE85F6001B31FF /* ProductViewController.swift */,
 				D8E5E71C23FE876C001B31FF /* ProductViewModel.swift */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E5E72723FEDBE6001B31FF /* NutrientCell.swift in Sources */,
 				D8E5E6FF23FE85F6001B31FF /* ProductViewController.swift in Sources */,
 				D8E5E72323FEB09A001B31FF /* ProductHighlightsView.swift in Sources */,
 				D8E5E71F23FE887C001B31FF /* ProductService.swift in Sources */,
