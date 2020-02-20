@@ -16,5 +16,10 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+
+        viewModel.fetchRandomProduct(completion: { product, error in
+            print(product)
+            print(error)
+        })
     }
 }

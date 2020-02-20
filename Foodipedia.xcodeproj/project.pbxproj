@@ -14,7 +14,7 @@
 		D8E5E71223FE85F6001B31FF /* FoodipediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E71123FE85F6001B31FF /* FoodipediaTests.swift */; };
 		D8E5E71D23FE876C001B31FF /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E71C23FE876C001B31FF /* ProductViewModel.swift */; };
 		D8E5E71F23FE887C001B31FF /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E71E23FE887C001B31FF /* ProductService.swift */; };
-		D8E5E72123FE8955001B31FF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E72023FE8955001B31FF /* Product.swift */; };
+		D8E5E72123FE8955001B31FF /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E5E72023FE8955001B31FF /* ProductResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		D8E5E71323FE85F6001B31FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E5E71C23FE876C001B31FF /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		D8E5E71E23FE887C001B31FF /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
-		D8E5E72023FE8955001B31FF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D8E5E72023FE8955001B31FF /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 				D8E5E71E23FE887C001B31FF /* ProductService.swift */,
 				D8E5E6FE23FE85F6001B31FF /* ProductViewController.swift */,
 				D8E5E71C23FE876C001B31FF /* ProductViewModel.swift */,
-				D8E5E72023FE8955001B31FF /* Product.swift */,
+				D8E5E72023FE8955001B31FF /* ProductResponse.swift */,
 				D8E5E70323FE85F6001B31FF /* Assets.xcassets */,
 				D8E5E70523FE85F6001B31FF /* LaunchScreen.storyboard */,
 			);
@@ -204,7 +204,7 @@
 			files = (
 				D8E5E6FF23FE85F6001B31FF /* ProductViewController.swift in Sources */,
 				D8E5E71F23FE887C001B31FF /* ProductService.swift in Sources */,
-				D8E5E72123FE8955001B31FF /* Product.swift in Sources */,
+				D8E5E72123FE8955001B31FF /* ProductResponse.swift in Sources */,
 				D8E5E6FB23FE85F6001B31FF /* AppDelegate.swift in Sources */,
 				D8E5E71D23FE876C001B31FF /* ProductViewModel.swift in Sources */,
 			);
