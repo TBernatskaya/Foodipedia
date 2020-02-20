@@ -85,13 +85,10 @@
 			children = (
 				D8E5E70823FE85F6001B31FF /* Info.plist */,
 				D8E5E6FA23FE85F6001B31FF /* AppDelegate.swift */,
-				D8E5E71E23FE887C001B31FF /* ProductService.swift */,
-				D8E5E6FE23FE85F6001B31FF /* ProductViewController.swift */,
-				D8E5E71C23FE876C001B31FF /* ProductViewModel.swift */,
-				D8E5E72023FE8955001B31FF /* ProductResponse.swift */,
 				D8E5E70323FE85F6001B31FF /* Assets.xcassets */,
 				D8E5E70523FE85F6001B31FF /* LaunchScreen.storyboard */,
-				D8E5E72223FEB09A001B31FF /* ProductHighlightsView.swift */,
+				D8E5E72423FED9B1001B31FF /* ProductView */,
+				D8E5E72523FED9CD001B31FF /* Services */,
 			);
 			path = Foodipedia;
 			sourceTree = "<group>";
@@ -103,6 +100,25 @@
 				D8E5E71323FE85F6001B31FF /* Info.plist */,
 			);
 			path = FoodipediaTests;
+			sourceTree = "<group>";
+		};
+		D8E5E72423FED9B1001B31FF /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				D8E5E72223FEB09A001B31FF /* ProductHighlightsView.swift */,
+				D8E5E6FE23FE85F6001B31FF /* ProductViewController.swift */,
+				D8E5E71C23FE876C001B31FF /* ProductViewModel.swift */,
+			);
+			path = ProductView;
+			sourceTree = "<group>";
+		};
+		D8E5E72523FED9CD001B31FF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8E5E72023FE8955001B31FF /* ProductResponse.swift */,
+				D8E5E71E23FE887C001B31FF /* ProductService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -22,24 +22,29 @@ class ProductViewController: UIViewController {
         setupConstraints()
 
         viewModel.fetchRandomProduct(completion: { product, error in
-            if let product = product {
-                DispatchQueue.main.async {
-                    self.productHighlightsView.updateView(with: product)
+
+            DispatchQueue.main.async {
+                if let product = product {
+                    self.updateViews(with: product)
                 }
-            } else {
-                self.presentAlert(with: error)
+                else {
+                    self.presentAlert(with: error)
+                }
             }
         })
+    }
+
+    private func updateViews(with product: Product) {
+        self.productHighlightsView.productName.text = product.title
+        self.productHighlightsView.calories.text = String(product.calories)
+        self.productHighlightsView.caloriesSubtitle.text = "Calories per serving"
     }
 
     private func presentAlert(with title: String?) {
         let title = title ?? "Unknown error"
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         alert.addAction(.init(title: "OK", style: .cancel, handler: nil))
-
-        DispatchQueue.main.async {
-            self.present(alert, animated: true, completion: nil)
-        }
+        self.present(alert, animated: true, completion: nil)
     }
 
     private func setupConstraints() {

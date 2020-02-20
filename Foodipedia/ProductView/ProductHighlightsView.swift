@@ -52,12 +52,6 @@ class ProductHighlightsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateView(with product: Product) {
-        productName.text = product.title
-        calories.text = String(product.calories)
-        caloriesSubtitle.text = "Calories per serving"
-    }
-
     private func setupConstraints() {
         let padding: CGFloat = 16
         NSLayoutConstraint.activate([
