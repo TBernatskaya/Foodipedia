@@ -53,9 +53,8 @@ class ProductHighlightsView: UIView {
     }
 
     private func setupConstraints() {
-        let padding: CGFloat = 16
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])

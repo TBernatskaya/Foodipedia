@@ -57,11 +57,17 @@ class ProductViewModelTests: XCTestCase {
         let viewModel = ProductViewModelImpl(productService: serviceMock)
         let expectation = XCTestExpectation(description: "Product is fetched")
         let indexOutOfRange = viewModel.nutrientsCount + 1
+        let indexBelowZero = -1
 
         viewModel.fetchRandomProduct(completion: { _, _ in
-            let (name, amount) = viewModel.nutrientInfo(by: indexOutOfRange)
+            var (name, amount) = viewModel.nutrientInfo(by: indexOutOfRange)
             XCTAssertEqual(name, "")
             XCTAssertEqual(amount, "")
+
+            (name, amount) = viewModel.nutrientInfo(by: indexBelowZero)
+            XCTAssertEqual(name, "")
+            XCTAssertEqual(amount, "")
+
             expectation.fulfill()
         })
 

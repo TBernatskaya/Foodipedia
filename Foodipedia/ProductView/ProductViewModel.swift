@@ -31,7 +31,8 @@ class ProductViewModelImpl: ProductViewModel {
 
     func nutrientInfo(by index: Int) -> (String, String) {
         guard
-            let  product = product,
+            let product = product,
+            0 <= index,
             index < nutrientsCount
         else { return ("", "") }
 
